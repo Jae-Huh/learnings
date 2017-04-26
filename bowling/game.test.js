@@ -13,7 +13,7 @@ test('game.addOpenFrameScore adds single scores', function (t) {
   var expected = 26
 
   // Act
-  var actual = game.addOpenFrameScore(score, '26')
+  var actual = game.addOpenFrameScore(score)
 
   // Assert
   t.deepEqual(actual, expected)
