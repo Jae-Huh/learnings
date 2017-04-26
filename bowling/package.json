@@ -1,0 +1,16 @@
+{
+  "name": "bowling",
+  "version": "1.0.0",
+  "description": "In this challenge you're going to score a bowling game. Sound simple? Just wait...",
+  "main": "game.js",
+  "scripts": {
+    "test": "tape game.tests.js | tap-diff"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tap-diff": "^0.1.1",
+    "tape": "^4.6.3"
+  }
+}
