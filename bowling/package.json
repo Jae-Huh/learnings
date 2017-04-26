@@ -4,7 +4,7 @@
   "description": "In this challenge you're going to score a bowling game. Sound simple? Just wait...",
   "main": "game.js",
   "scripts": {
-    "test": "tape game.tests.js | tap-diff"
+    "test": "tape game.test.js | tap-diff"
   },
   "keywords": [],
   "author": "",
