@@ -13,25 +13,30 @@ var frames = [
 //   [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 10, 10]
 // ]
 
-var score = 0
+var score = calculateScore(frames)
 
 function addOpenFrameScore (frames) {
-  for (var i = 0; i < frames.length; i++) {
-    if (frames[i][0] + frames[i][1] < 10) {
-      score += frames[i][0] + frames[i][1]
+  var score = 0
+  for (var frame of frames) {
+    if (frame[0] + frame[1] < 10) {
+      score += frame[0] + frame[1]
     }
   }
+  return score
 }
 
 function addSpareScore (frames) {
+  var score = 0
   for (var i = 0; i < frames.length; i++) {
     if (frames[i][0] !== 10 && frames[i][0] + frames[i][1] === 10) {
       score += 10 + frames[i+1][0]
     }
   }
+  return score
 }
 
 function addStrikeScore (frames) {
+  var score = 0
   for (var i = 0; i < frames.length; i++) {
     // Checks if strick
     if (frames[i][0] === 10) {
@@ -49,13 +54,11 @@ function addStrikeScore (frames) {
       }
     }
   }
+  return score
 }
 
 function calculateScore () {
-  addOpenFrameScore(frames)
-  addSpareScore(frames)
-  addStrikeScore(frames)
-  console.log(score)
+  return addOpenFrameScore(frames) + addSpareScore(frames) + addStrikeScore(frames)
 }
 
-calculateScore()
+console.log(score)
