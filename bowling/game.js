@@ -63,7 +63,7 @@ function calculateScore () {
 
 console.log(score)
 
-module.export = {
+module.exports = {
   addOpenFrameScore,
   addSpareScore,
   addStrikeScore,
