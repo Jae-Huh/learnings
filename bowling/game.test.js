@@ -2,10 +2,11 @@ var test = require('tape')
 
 var game = require('game')
 
-// test('Test test test', function(t) {
-//   t.pass()
-//   t.end()
-// })
+test('Test test test', function(t) {
+  // t.pass()
+  // t.end()
+  t(1).Equals(1)
+})
 
 test('game.addOpenFrameScore adds single scores', function (t) {
   // Arrange
@@ -16,5 +17,5 @@ test('game.addOpenFrameScore adds single scores', function (t) {
   var actual = game.addOpenFrameScore(score)
 
   // Assert
-  t.deepEqual(actual, expected)
+  t.equals(actual, expected)
 })
