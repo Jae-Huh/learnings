@@ -17,4 +17,5 @@ test('game.addOpenFrameScore adds single scores', function (t) {
 
   // Assert
   t.equals(actual, expected)
+  t.end()
 })
