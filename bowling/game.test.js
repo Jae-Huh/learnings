@@ -1,11 +1,10 @@
 var test = require('tape')
 
-var game = require('game')
+var game = require('./game')
 
 test('Test test test', function(t) {
-  // t.pass()
-  // t.end()
-  t(1).Equals(1)
+  t.pass()
+  t.end()
 })
 
 test('game.addOpenFrameScore adds single scores', function (t) {
