@@ -31,3 +31,72 @@ test('scores a spare frame', function (t) {
   t.equal(actual, expected)
   t.end()
 })
+
+test('scores a single strike frame', function (t) {
+  var frame = [10, 0]
+  var nextFrame = [2, 4]
+  var expected = 16
+  var actual = game.scoreFrame(frame, nextFrame)
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('scores a double strike frame', function (t) {
+  var frame = [10, 0]
+  var nextFrame = [10, 0]
+  var nextNextFrame = [3, 5]
+  var expected = 23
+  var actual = game.scoreFrame(frame, nextFrame, nextNextFrame)
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('scores a game', function (t) {
+  var frames = [
+    [1, 2], [6, 4], [5, 4], [10, 0], [7, 2], [10, 0], [10, 0], [5, 2], [7, 0], [4, 4]
+  ]
+  var expected = 119
+  var actual = game.scoreGame(frames)
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('scores a spare in the 10th frame', function (t) {
+  var frames = [
+    [1, 2], [6, 4], [5, 4], [10, 0], [7, 2], [10, 0], [10, 0], [5, 2], [7, 0], [2, 8]
+  ]
+  var expected = 121
+  var actual = game.scoreGame(frames)
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('scores a strike in the 10th frame', function (t) {
+  var frames = [
+    [1, 2], [6, 4], [5, 4], [10, 0], [7, 2], [10, 0], [10, 0], [5, 2], [7, 0], [10, 0]
+  ]
+  var expected = 121
+  var actual = game.scoreGame(frames)
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('scores a game with a complex ending', function (t) {
+  var frames = [
+    [1, 2], [6, 4], [5, 4], [10, 0], [7, 2], [10, 0], [10, 0], [5, 2], [7, 0], [10, 10, 10]
+  ]
+  var expected = 141
+  var actual = game.scoreGame(frames)
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('scores a perfect game', function (t) {
+  var frames = [
+    [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 10, 10]
+  ]
+  var expected = 300
+  var actual = game.scoreGame(frames)
+  t.equal(actual, expected)
+  t.end()
+})
