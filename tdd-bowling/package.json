@@ -1,0 +1,15 @@
+{
+  "name": "bowling",
+  "version": "1.0.0",
+  "description": "A kata for test-first design (aka TDD)",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape 'tests/**/*.js' | tap-spec"
+  },
+  "author": "Don Smith <don@devacademy.co.nz>",
+  "license": "ISC",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  }
+}
