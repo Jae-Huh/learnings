@@ -1,11 +1,12 @@
-var express = require('express')
+const express = require('express')
 
-var server = require('./server')
-var PORT = process.env.PORT || 3000
+const server = require('./server')
+const PORT = process.env.PORT || 3000
 
-var app = express()
+const app = express()
 
 app.get('/', server.compliment)
+app.get('/profile', server.profile)
 
 app.listen(PORT, function () {
   console.log('server listening on port: ', PORT)
