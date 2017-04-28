@@ -9,6 +9,7 @@ app.use(express.static('public'))
 
 app.get('/', server.compliment)
 app.get('/profile/', server.profile)
+app.get('/profile/:id', server.profiles)
 
 app.listen(PORT, function () {
   console.log('server listening on port: ', PORT)
