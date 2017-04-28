@@ -5,7 +5,8 @@ function compliment (req, res) {
 }
 
 function profile (req, res) {
-  res.sendFile(path.join(__dirname, './silvia.html'))
+  const name = req.query.name
+  res.sendFile(path.join(__dirname, `./${name}.html`))
 }
 
 
