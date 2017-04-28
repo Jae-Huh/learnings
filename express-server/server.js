@@ -6,7 +6,7 @@ function compliment (req, res) {
 
 function profile (req, res) {
   const name = req.query.name
-  res.sendFile(path.join(__dirname, `./profiles/${name}.html`))
+  res.sendFile(path.join(__dirname, `./public/${name}.html`))
 }
 
 
