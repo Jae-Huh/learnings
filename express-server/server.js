@@ -13,9 +13,10 @@ function profiles (req, res) {
   const id = req.params.id
   if (id === '1') {
     res.sendFile(path.join(__dirname, 'public', 'silvia.html'))
-  }
-  if (id === '2') {
+  } else if (id === '2') {
     res.sendFile(path.join(__dirname, 'public', 'sampson.html'))
+  } else {
+    res.status(404).send("404")
   }
 }
 
