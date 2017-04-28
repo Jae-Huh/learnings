@@ -1,7 +1,7 @@
 var express = require('express')
 
 function compliment (req, res) {
-  res.send('You have the warmest smile!')
+  res.send('<h1>You have the warmest smile!</h1>')
 }
 
 
