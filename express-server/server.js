@@ -1,5 +1,10 @@
 var express = require('express')
 
-var app = express()
+function compliment (req, res) {
+  res.send('You have the warmest smile!')
+}
 
-module.exports = app
+
+module.exports = {
+  compliment
+}
