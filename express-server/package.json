@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dev-academy-challenges/express-response#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.14.0",
     "supertest": "^1.2.0"
   },
