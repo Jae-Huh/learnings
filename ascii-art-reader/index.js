@@ -62,8 +62,25 @@ function runCommands (input) {
     case 'q':
       process.exit()
       break
-
+    case 'c':
+      writeComments(input)
+      break
   }
+}
+
+function writeComments (comment) {
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+
+  rl.question('\nYour comment:\n', function (comment) {
+    rl.close()
+    fs.writeFile('./data/comments.txt', comment + '\n', function (err) {
+      if (err) throw err
+      console.log('Your comment is saved!')
+    })
+  })
 }
 
 // User can press enter to get commands and art list again
