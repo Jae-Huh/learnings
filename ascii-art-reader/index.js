@@ -6,7 +6,7 @@ start()
 function start() {
   welcome()
   listArts()
-  pressEnter()
+  // pressEnter()
 }
 
 function welcome () {
@@ -19,6 +19,7 @@ function listArts () {
       console.log(i + ':', files[i]);
     }
   })
+  pressEnter()
 }
 
 function pressEnter () {
@@ -33,6 +34,7 @@ function pressEnter () {
     // Call any functions you like here. For example:
     loadFile(input, (contents) => {
       console.log(contents)
+      listArts()
     })
   })
 }
