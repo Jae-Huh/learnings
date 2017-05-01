@@ -1,0 +1,12 @@
+{
+  "name": "ascii-art-reader",
+  "version": "1.0.0",
+  "description": "Build a state of the (ASCII) art terminal client. Don't forget to maximise your terminal window on one screen... you'll need the space!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
