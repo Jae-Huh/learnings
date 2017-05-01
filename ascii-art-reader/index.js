@@ -65,6 +65,12 @@ function runCommands (input) {
     case 'c':
       writeComments(input)
       break
+    case 'v':
+      viewComments((contents) => {
+        console.log(contents)
+        toContinue()
+      })
+      break
   }
 }
 
@@ -77,9 +83,20 @@ function writeComments (comment) {
   rl.question('\nYour comment:\n', function (comment) {
     rl.close()
     fs.writeFile('./data/comments.txt', comment + '\n', function (err) {
-      if (err) throw err
+      if (err) {
+        throw err
+      }
       console.log('Your comment is saved!')
     })
+  })
+}
+
+function viewComments (callback) {
+  fs.readFile('./data/comments.txt', 'utf-8', (err, contents) => {
+    if (err) {
+      throw err
+    }
+    callback(contents)
   })
 }
 
