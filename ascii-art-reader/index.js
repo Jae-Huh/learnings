@@ -14,7 +14,7 @@ function welcome () {
 
 function commandsAndArts () {
   // Command
-  console.log(`Choose an artwork to display, or:\n\n'c' to comment\n'e' to erase comments\n'v' to view comments\n'q' to quit\n`)
+  console.log(`Choose an artwork to display, or:\n\n'c' to comment\n'v' to view comments\n'd' to delete comments\n'q' to quit\n`)
   // List of artwork
   fs.readdir('./data/arts', (err, files) => {
     for (let i = 0; i < files.length; i ++) {
@@ -71,6 +71,9 @@ function runCommands (input) {
         toContinue()
       })
       break
+    case 'd':
+      deleteComments()
+      break
   }
 }
 
@@ -86,7 +89,7 @@ function writeComments (comment) {
       if (err) {
         throw err
       }
-      console.log('Your comment is saved!')
+      console.log('\nYour comment is saved!')
       toContinue()
     })
   })
@@ -98,6 +101,30 @@ function viewComments (callback) {
       throw err
     }
     callback(contents)
+  })
+}
+
+function deleteComments () {
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+
+  rl.question('\nAre you sure? [y/n]\n', (input) => {
+    rl.close()
+
+    if (input === 'y') {
+      fs.writeFile('./data/comments.txt', '', (err) => {
+        if (err) {
+          throw err
+        }
+        console.log('\nComments deleted successfully')
+        toContinue()
+      })
+    }
+    if (input ==='n') {
+      toContinue()
+    }
   })
 }
 
