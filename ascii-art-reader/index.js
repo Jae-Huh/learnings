@@ -82,11 +82,12 @@ function writeComments (comment) {
 
   rl.question('\nYour comment:\n', function (comment) {
     rl.close()
-    fs.writeFile('./data/comments.txt', comment + '\n', function (err) {
+    fs.appendFile('./data/comments.txt', comment + '\n', (err) => {
       if (err) {
         throw err
       }
       console.log('Your comment is saved!')
+      toContinue()
     })
   })
 }
