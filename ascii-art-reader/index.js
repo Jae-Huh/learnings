@@ -1,4 +1,13 @@
 const fs = require('fs')
+var readline = require('readline')
+
+start()
+
+function start() {
+  welcome()
+  listArts()
+  pressEnter()
+}
 
 function welcome () {
   console.log("Hello there, welcome! :D")
@@ -12,5 +21,28 @@ function listArts () {
   })
 }
 
-welcome()
-listArts()
+function pressEnter () {
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+
+  rl.question('Which file should I load? ', function (input) {
+    rl.close()
+
+    // Call any functions you like here. For example:
+    loadFile(input, (contents) => {
+      console.log(contents)
+    })
+  })
+}
+
+function loadFile (index, callback) {
+  const artArr = fs.readdirSync('./data/arts')
+  fs.readFile(__dirname + '/data/arts/'+ artArr[index], 'utf-8', (err, contents) => {
+    if (err) {
+        console.log('Error:', err)
+    }
+    callback(contents)
+  })
+}
