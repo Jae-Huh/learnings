@@ -5,7 +5,7 @@ start()
 
 function start() {
   welcome()
-  listArts()
+  commandsAndArts()
   // pressEnter()
 }
 
@@ -13,22 +13,24 @@ function welcome () {
   console.log("Hello there, welcome to the world of ASCII art! :D \n")
 }
 
-function listArts () {
+function commandsAndArts () {
+  console.log(`Choose an artwork to display, or:\n'c' to comment\n'e' to erase comments\n'v' to view comments\n'q' to quit
+`)
   fs.readdir('./data/arts', (err, files) => {
     for (let i = 0; i < files.length; i ++) {
       console.log(i + ':', files[i])
     }
-    showArt()
+    userListener()
   })
 }
 
-function showArt () {
+function userListener () {
   var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   })
 
-  rl.question('\nWhich file should I load? \n', function (input) {
+  rl.question('\nType your response.\n', function (input) {
     rl.close()
 
     // Call any functions you like here. For example:
@@ -55,9 +57,9 @@ function toContinue () {
     output: process.stdout
   })
 
-  rl.question('Press enter to continue', function (input) {
+  rl.question('Press enter to continue.\n', function (input) {
     rl.close()
 
-    listArts()
+    commandsAndArts()
   })
 }
