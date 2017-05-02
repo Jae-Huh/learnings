@@ -20,4 +20,3 @@ app.use(express.static('public'))
 // Routes
 app.use('/', router)
 router.get('/', routes.homePage)
-// router.get('/', routes.listArt)
