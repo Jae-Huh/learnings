@@ -4,6 +4,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
+}
+
+.header {
+  background-color: #F1FAEE;
+  color: #E63946;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .artTitle {
@@ -12,4 +22,9 @@ body {
   display: flex;
   padding: 5px 10px;
   border-radius: 10px;
+}
+
+.artTitle a {
+  text-decoration: none;
+  color: #F1FAEE;
 }
