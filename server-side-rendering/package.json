@@ -1,0 +1,25 @@
+{
+  "name": "server-side-templating",
+  "version": "0.1.0",
+  "description": "Server-side rendering with Handlebars templates",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon --inspect index.js",
+    "test": "tape tests/**/*.test.js | tap-diff",
+    "start": "nodemon index"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.6.3"
+  },
+  "keywords": [],
+  "author": "Enspiral Dev Academy",
+  "license": "ISC"
+}
