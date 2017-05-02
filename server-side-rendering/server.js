@@ -1,15 +1,15 @@
-var express = require('express')
-var hbs = require('express-handlebars')
+const express = require('express')
+const hbs = require('express-handlebars')
 
-var routes = require('./routes')
-var router = express.Router()
+const routes = require('./routes')
+const router = express.Router()
 
-var hbsConfig = {
+const hbsConfig = {
   extname: 'hbs',
   defaultLayout: 'main'
 }
 
-var app = express()
+const app = express()
 module.exports = app
 
 // Middleware
@@ -19,3 +19,5 @@ app.use(express.static('public'))
 
 // Routes
 app.use('/', router)
+router.get('/', routes.homePage)
+// router.get('/', routes.listArt)
