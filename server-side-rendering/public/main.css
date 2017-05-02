@@ -28,3 +28,32 @@ body {
   text-decoration: none;
   color: #F1FAEE;
 }
+
+.additional-info {
+  background-color: #F1FAEE;
+  margin: 20px 0;
+  padding: 0 30px;
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.home-btn-container {
+  margin: 10px 0;
+}
+
+.home-btn {
+  text-decoration: none;
+  color: #F1FAEE;
+  background-color: #1D3557;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.home-btn:hover {
+  text-decoration: none;
+  background-color: #F1FAEE;
+  color: #1D3557;
+}
