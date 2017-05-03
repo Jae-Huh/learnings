@@ -8,7 +8,7 @@
   },
   "scripts": {
     "debug": "nodemon --inspect index.js",
-    "test": "tape tests/**/*.test.js | tap-diff",
+    "test": "tape tests/*.test.js | tap-diff",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -32,11 +32,13 @@
     "express-handlebars": "^3.0.0"
   },
   "devDependencies": {
+    "cheerio": "^0.22.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.11.0",
+    "supertest": "^3.0.0",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.3"
   }
