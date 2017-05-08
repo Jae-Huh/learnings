@@ -1,0 +1,31 @@
+{
+  "name": "knex-todo-cli",
+  "version": "1.0.0",
+  "description": "Command-line todo app using Knex.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "knex": "knex",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pohutukawa-2017/knex-todo-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pohutukawa-2017/knex-todo-cli/issues"
+  },
+  "homepage": "https://github.com/pohutukawa-2017/knex-todo-cli#readme",
+  "dependencies": {
+    "knex": "^0.13.0",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
+}
